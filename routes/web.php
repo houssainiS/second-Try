@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts',[PostController::class,'index']);
-Route::get('posts/{post}',[PostController::class ,'show']);
-Route::get('/test/ok',[PostController::class ,function(){return 'in tes rn';}]);
+Route::get('/posts',[PostController::class,'index'])->name(name: 'posts.index');
+Route::get('posts/{post}',[PostController::class ,'show'])->name(name: 'posts.show');
+Route::get('/test/ok/somthing/anotherthing/anotherone/fine',[PostController::class ,function(){return 'in tes rn';}])->name(name:'test');
