@@ -13,6 +13,10 @@ class PostController extends Controller
         ['id'=>3,'title'=>'history','Posted by'=>'yamen','created at'=>'3-1-2024'],
         ['id'=>4,'title'=>'nuclear','Posted by'=>'hitler','created at'=>'3-3-1950']
     ];
-        return view('index',['posts'=>$allPosts]);
+        return view('posts.index',['posts'=>$allPosts]);
+    }
+    public function show($postid){
+        $singlePost=['id'=>1,'title'=>'PHP','Posted by'=>'ahmed','desc'=>"hello guys ! how r y'all",'created at'=>'12-1-2024'];
+        return view('posts.show' , ['post'=>$singlePost]);
     }
 }

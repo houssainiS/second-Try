@@ -18,4 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/posts',[PostController::class,'index']);
-Route::get('posts/{post}',function(){return 'we r in show';});
+Route::get('posts/{post}',[PostController::class ,'show']);
+Route::get('/test/ok',[PostController::class ,function(){return 'in tes rn';}]);
