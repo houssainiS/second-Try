@@ -19,4 +19,7 @@ class PostController extends Controller
         $singlePost=['id'=>1,'title'=>'PHP','Posted by'=>'ahmed','desc'=>"hello guys ! how r y'all",'created at'=>'12-1-2024'];
         return view('posts.show' , ['post'=>$singlePost]);
     }
+    public function create(){
+        return view('posts.create');
+    }
 }

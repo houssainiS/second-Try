@@ -3,7 +3,7 @@
 @section('indexContent')
 <div class="text-center">
 <div class="mt-5" align="center">
-    <button type="button" class="btn btn-success">Create Post</button>
+    <a href="{{route('posts.create')}}" class=""><button type="button" class="btn btn-success">Create Post</button></a>
 </div>
 <table class="table mt-4 ">
   <thead>
