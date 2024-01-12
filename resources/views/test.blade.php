@@ -27,38 +27,34 @@
 <div class="text-center">
 <div class="mt-5" align="center">
     <button type="button" class="btn btn-success">Create Post</button>
-
+</div>
 <table class="table mt-4 ">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Posted by</th>
+      <th scope="col">  Created at</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+    @foreach($posts as $post)
+
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$post['id']}}</th>
+      <td>{{$post['Posted by']}}</td>
+      <td>{{$post['created at']}}</td>
+      <td>
+      <button type="button" class="btn btn-info">View</button>
+      <button type="button" class="btn btn-primary">Edit</button>
+      <button type="button" class="btn btn-danger">Delete</button>
+      </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+   @endforeach
   </tbody>
 </table>
 </div>
-</div>
+
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
