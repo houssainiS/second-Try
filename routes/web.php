@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/test', function () {
-    $localname="houssaini";
-    $books= ["PHP","JAVA","CSS"];
-
-    return view('test',['name'=>$localname,'books'=>$books]);
-});
+Route::get('/test',[TestController::class,'firstAction']);
