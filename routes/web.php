@@ -17,5 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/test', function () {
-    return view('test');
+    $localname="houssaini";
+    $books= ["PHP","JAVA","CSS"];
+
+    return view('test',['name'=>$localname,'books'=>$books]);
 });
