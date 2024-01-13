@@ -24,7 +24,11 @@
       <td>
       <a href="{{route('posts.show', $post['id'])}}" class=""><button type="button" class="btn btn-info">View</button></a>
       <a href="{{route('posts.edit',$post['id'])}}" class=""><button type="button" class="btn btn-primary">Edit</button></a>
-      <button type="button" class="btn btn-danger">Delete</button>
+      <form style="display:inline;" method="POST" action="{{route('posts.destroy',1)}}">
+        @csrf
+        @method('delete')
+      <a href="" class=""><button type="submit" class="btn btn-danger">Delete</button></a>
+      </form>
       </td>
     </tr>
    @endforeach
