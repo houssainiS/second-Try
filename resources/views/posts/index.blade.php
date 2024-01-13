@@ -27,7 +27,7 @@
       <form style="display:inline;" method="POST" action="{{route('posts.destroy',1)}}">
         @csrf
         @method('delete')
-      <a href="" class=""><button type="submit" class="btn btn-danger">Delete</button></a>
+      <a href="" class=""><button type="submit" onclick="return confirm('Are you sure you want to delete this post?')" class="btn btn-danger" >Delete</button></a>
       </form>
       </td>
     </tr>

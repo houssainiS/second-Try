@@ -24,7 +24,7 @@
   </div>
 </nav>
 </header>
-
+@yield('welcomeContent')
 @yield('indexContent')
 @yield('showContent')
 @yield('createContent')

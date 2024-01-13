@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <titlewelcome</title>
-</head>
-<body>
+@extends('layouts.app')
+@section('title')welcome @endsection
+@section('welcomeContent')
     alhamdulila
-</body>
-</html>
+<center>   <a href="{{route('posts.index')}}" class=""><button type="submit" class="btn btn-danger" >go</button></a>
+</center>
+@endsection
