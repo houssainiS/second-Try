@@ -3,7 +3,8 @@
 @section('createContent')
 
 
-<form class="mt-4 m-5">
+<form class="mt-4 m-5" method="POST" action="{{route('posts.store')}}">
+  @csrf
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Title</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
