@@ -23,6 +23,11 @@ class PostController extends Controller
         return view('posts.create');
     }
     public function store(){
+        $data= request()->all();
+        $email=request()->email;
+        $desc=request()->desc;
+        $user=request()->user;
+        //dd($data,$email,$desc,$user);
          return to_route('posts.index');
     }
 }
