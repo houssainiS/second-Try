@@ -12,8 +12,10 @@ class PostController extends Controller
       
         return view('posts.index',['posts'=>$postFromDB]);
     }
-    public function show($postid){
-        $singlePost=['id'=>1,'title'=>'PHP','Posted by'=>'ahmed','desc'=>"hello guys ! how r y'all",'created at'=>'12-1-2024'];
+    public function show($postId){
+       $singlePost=Post::find($postId);
+       //$singlePost=Post::where('id',$postId)->first();
+       //$singlePost=Post::where('id',$postId)->get();
         return view('posts.show' , ['post'=>$singlePost]);
     }
     public function create(){
