@@ -30,4 +30,13 @@ class PostController extends Controller
         //dd($data,$email,$desc,$user);
          return to_route('posts.index');
     }
+    public function edit(){
+        return view('posts.edit');
+    }
+    public function update(){
+        $email=request()->email;
+        $desc=request()->desc;
+        $user=request()->user;
+        return to_route('posts.show',1);
+    }
 }

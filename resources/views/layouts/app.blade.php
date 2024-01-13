@@ -28,6 +28,7 @@
 @yield('indexContent')
 @yield('showContent')
 @yield('createContent')
+@yield('updateContent')
 
 
 
