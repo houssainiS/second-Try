@@ -7,7 +7,7 @@
   @csrf
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Title</label>
-    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
   <div class="form-floating mb-3">
   <textarea class="form-control" name="desc" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
