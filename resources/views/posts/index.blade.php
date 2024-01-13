@@ -19,8 +19,8 @@
 
     <tr>
       <th scope="row">{{$post['id']}}</th>
-      <td>{{$post['Posted by']}}</td>
-      <td>{{$post['created at']}}</td>
+      <td>{{$post->postedBy}}</td>
+      <td>{{$post['created_at']}}</td>
       <td>
       <a href="{{route('posts.show', $post['id'])}}" class=""><button type="button" class="btn btn-info">View</button></a>
       <a href="{{route('posts.edit',$post['id'])}}" class=""><button type="button" class="btn btn-primary">Edit</button></a>
