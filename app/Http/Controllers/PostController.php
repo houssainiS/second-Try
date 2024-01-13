@@ -13,10 +13,15 @@ class PostController extends Controller
         return view('posts.index',['posts'=>$postFromDB]);
     }
     public function show($postId){
-       $singlePost=Post::find($postId);
+        $singlePost=Post::find($postId);
+        if(is_null($singlePost)){
+            return to_route('posts.index');
+        }else{
+       
        //$singlePost=Post::where('id',$postId)->first();
        //$singlePost=Post::where('id',$postId)->get();
         return view('posts.show' , ['post'=>$singlePost]);
+    }
     }
     public function create(){
         return view('posts.create');
