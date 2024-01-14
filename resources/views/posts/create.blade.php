@@ -3,7 +3,7 @@
 @section('createContent')
 
 
-<form class="mt-4 m-5" method="" action="{{route('posts.store')}}">
+<form class="mt-4 m-5" method="POST" action="{{route('posts.store')}}">
   @csrf
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Title</label>
@@ -15,9 +15,9 @@
 </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Post Creator</label>
-    <select class="form-control" name="user" >
+    <select class="form-control" name="postedBy" >
       @foreach($users as $user)
-      <option value="{{$user->id}}">{{$user->name}}</option>
+      <option value="{{$user->name}}" name="user">{{$user->name}}</option>
     @endforeach
     </select>
   </div>

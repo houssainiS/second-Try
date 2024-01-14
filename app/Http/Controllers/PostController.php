@@ -30,10 +30,19 @@ class PostController extends Controller
     }
     public function store(){
         $data= request()->all();
-        $email=request()->email;
+        $title=request()->title;
         $desc=request()->desc;
-        $user=request()->user;
-        //dd($data,$email,$desc,$user);
+        $postedBy=request()->postedBy;
+      // dd($data,$title,$desc,$postedBy);
+
+//saving to dataBase
+        $post =new Post;
+        $post->title=$title;
+        $post->desc=$desc;
+       $post->postedBy=$postedBy;
+      //  dd($title,$desc,$postedBy);
+        $post->save();
+
          return to_route('posts.index');
     }
     public function edit(){
