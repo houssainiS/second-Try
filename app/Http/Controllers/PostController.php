@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\post;
+use App\Models\user;
 class PostController extends Controller
 {
     public function index(){
@@ -12,7 +13,7 @@ class PostController extends Controller
       
         return view('posts.index',['posts'=>$postFromDB]);
     }
-    public function show($postId){
+    public function show($postId){ //you can also use route model binding video at 4:46
         $singlePost=Post::find($postId);
         if(is_null($singlePost)){
             return to_route('posts.index');
@@ -24,7 +25,8 @@ class PostController extends Controller
     }
     }
     public function create(){
-        return view('posts.create');
+        $allusers=User::all();
+        return view('posts.create',['users'=>$allusers]);
     }
     public function store(){
         $data= request()->all();
