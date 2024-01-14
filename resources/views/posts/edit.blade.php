@@ -2,20 +2,24 @@
 @section('title')edit @endsection
 @section('updateContent')
 
-<form class="mt-4 m-5" method="POST" action="{{route('posts.update',1)}}">
+<form class="mt-4 m-5" method="POST" action="{{route('posts.update',$post->id)}}">
   @csrf
   @method('PUT')
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Title</label>
-    <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="text" class="form-control" name="title" value="{{$post->title}}" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
   <div class="form-floating mb-3">
-  <textarea class="form-control" name="desc" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+  <textarea class="form-control" name="desc"  placeholder="Leave a comment here" id="floatingTextarea">{{$post->desc}}</textarea>
   <label for="floating Textarea">Description</label>
 </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Post Creator</label>
-    <input type="text" class="form-control" name="user" id="exampleInputPassword1">
+    <select class="form-control" name="postedBy" >
+      @foreach($users as $user)
+      <option value="{{$user->name}}" name="user">{{$user->name}}</option>
+    @endforeach
+    </select>
   </div>
   <button type="submit" class="btn btn-primary">Update</button>
 </form>
