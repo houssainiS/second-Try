@@ -60,7 +60,14 @@ class PostController extends Controller
         $singlePost->update(['title'=>$title , 'desc'=>$desc , 'postedBy'=>$postedBy]);
         return to_route('posts.show',$postId );
     }
-    public function destroy(){
+    public function destroy($postId){
+        $post=Post::find($postId);
+        //dd($postId);
+        $post->delete();
+        //Post::where('id',$postId)->delete();
+
+
+
         return to_route('posts.index');
     }
 }
